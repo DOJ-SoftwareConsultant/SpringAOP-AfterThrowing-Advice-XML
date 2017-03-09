@@ -13,8 +13,8 @@
 			<aop:pointcut expression="execution(* com.doj.aopapp.service.*.*(..))" id="logForAllMethods"/>
 			<!-- all public methods whose name are transfer() with taking three arguments of any type and any return type of all classes in the com.doj.aopapp.service package -->
 			<aop:pointcut expression="execution(* com.doj.aopapp.service.*.transfer(*,*,*))" id="logForAllTransfer"/>
-			<aop:after-throwing method="afterThrowingAdviceForAllMethods" pointcut-ref="logForAllMethods"/>
-			<aop:after-throwing method="afterThrowingAdviceForTransferMethods" pointcut-ref="logForAllTransfer"/>
+			<aop:after-throwing method="afterThrowingAdviceForAllMethods" pointcut-ref="logForAllMethods" throwing="exc"/>
+			<aop:after-throwing method="afterThrowingAdviceForTransferMethods" pointcut-ref="logForAllTransfer" throwing="exc"/>
 		</aop:aspect>
 	</aop:config>
 	

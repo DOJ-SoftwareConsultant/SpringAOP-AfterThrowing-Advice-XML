@@ -16,8 +16,8 @@ public class LoggingAspect {
 	 * @param jp
 	 * @throws Throwable
 	 */
-	public void afterThrowingAdviceForAllMethods(JoinPoint jp) throws Throwable {
-        System.out.println("****LoggingAspect.afterThrowingAdviceForAllMethods() " + jp.getSignature().getName());
+	public void afterThrowingAdviceForAllMethods(JoinPoint jp, Exception exc) throws Throwable {
+        System.out.println("****LoggingAspect.afterThrowingAdviceForAllMethods() " + jp.getSignature().getName()+" Exception "+exc);
     }
 	
 	/**
@@ -26,8 +26,8 @@ public class LoggingAspect {
 	 * @param jp
 	 * @throws Throwable
 	 */
-	public void afterThrowingAdviceForTransferMethods(JoinPoint jp) throws Throwable {
-        System.out.println("****LoggingAspect.afterThrowingAdviceForTransferMethods() " + jp.getSignature().getName());
+	public void afterThrowingAdviceForTransferMethods(JoinPoint jp, Exception exc) throws Throwable {
+        System.out.println("****LoggingAspect.afterThrowingAdviceForTransferMethods() " + jp.getSignature().getName()+" Exception "+exc);
     }
 	
 }
